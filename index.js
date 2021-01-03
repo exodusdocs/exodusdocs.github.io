@@ -33,10 +33,9 @@ dropZone.addEventListener("drop", (e) => {
       fileInput.files = files;
       uploadFile();
     } else {
-      showToast("Max file size is 100MB");
+	;
     }
   } else if (files.length > 1) {
-    showToast("You can't upload multiple files");
   }
   dropZone.classList.remove("dragged");
 });
@@ -57,7 +56,6 @@ dropZone.addEventListener("dragleave", (e) => {
 // file input change and uploader
 fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
-    showToast("Max file size is 100MB");
     fileInput.value = ""; // reset the input
     return;
   }
@@ -68,7 +66,6 @@ fileInput.addEventListener("change", () => {
 copyURLBtn.addEventListener("click", () => {
   fileURL.select();
   document.execCommand("copy");
-  showToast("Copied to clipboard");
 });
 
 fileURL.addEventListener("click", () => {
@@ -99,8 +96,7 @@ const uploadFile = () => {
   };
 
   // handle error
-  xhr.upload.onerror = function () {
-    showToast(`Error in upload: ${xhr.status}.`);
+  xhr.upload.onerror = function () 
     fileInput.value = ""; // reset the input
   };
 
@@ -155,7 +151,6 @@ emailForm.addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.success) {
-        showToast("Email Sent");
         sharingContainer.style.display = "none"; // hide the box
       }
     });
