@@ -96,7 +96,7 @@ const uploadFile = () => {
   };
 
   // handle error
-  xhr.upload.onerror = function () 
+  xhr.upload.onerror = function () {
     fileInput.value = ""; // reset the input
   };
 
