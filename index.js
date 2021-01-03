@@ -13,8 +13,6 @@ const copyURLBtn = document.querySelector("#copyURLBtn");
 const fileURL = document.querySelector("#fileURL");
 const emailForm = document.querySelector("#emailForm");
 
-const toast = document.querySelector(".toast");
-
 const baseURL = "https://exodusdocs.herokuapp.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
@@ -162,14 +160,3 @@ emailForm.addEventListener("submit", (e) => {
       }
     });
 });
-
-let toastTimer;
-// the toast function
-const showToast = (msg) => {
-  clearTimeout(toastTimer);
-  toast.innerText = msg;
-  toast.classList.add("show");
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2000);
-};
