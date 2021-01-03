@@ -122,8 +122,8 @@ const onFileUploadSuccess = (res) => {
   status.innerText = "Uploaded";
 
   // remove the disabled attribute from form btn & make text send
-  emailForm[2].removeAttribute("disabled");
-  emailForm[2].innerText = "Send";
+  //emailForm[1].removeAttribute("disabled");
+  //emailForm[1].innerText = "Send";
   progressContainer.style.display = "none"; // hide the box
 
   const { file: url } = JSON.parse(res);
@@ -136,8 +136,8 @@ emailForm.addEventListener("submit", (e) => {
   e.preventDefault(); // stop submission
 
   // disable the button
-  emailForm[2].setAttribute("disabled", "true");
-  emailForm[2].innerText = "Sending";
+  emailForm[1].setAttribute("disabled", "true");
+  emailForm[1].innerText = "Sending";
 
   const url = fileURL.value;
 
